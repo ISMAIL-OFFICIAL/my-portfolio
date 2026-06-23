@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Ismail | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #4f46e5;
+            --accent: #10b981;
+            --border: #e2e8f0;
+            --nav-bg: rgba(248, 250, 252, 0.8);
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #0b0f1a;
+            --bg-card: #161b2a;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --primary: #818cf8;
+            --accent: #34d399;
+            --border: #1e293b;
+            --nav-bg: rgba(11, 15, 26, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 80px 0; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: var(--nav-bg); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-weight: 800; font-size: 1.3rem; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; }
+
+        /* Hero */
+        .hero {
+            height: 80vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.1), transparent);
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; margin-bottom: 1rem; }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+        /* Cards & Grids */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: var(--bg-card); padding: 2rem; border-radius: 20px;
+            border: 1px solid var(--border); position: relative;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        
+        .section-title { font-size: 2rem; margin-bottom: 2.5rem; font-weight: 800; }
+        .tag { 
+            display: inline-block; padding: 0.2rem 0.8rem; border-radius: 50px; 
+            font-size: 0.75rem; font-weight: 700; background: rgba(79, 70, 229, 0.1); color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons/Toggle */
+        .theme-toggle {
+            background: var(--border); border: none; cursor: pointer;
+            width: 40px; height: 40px; border-radius: 50%; color: var(--text-main);
+        }
+
+        .social-links { display: flex; gap: 1rem; margin-top: 2rem; }
+        .social-icon { 
+            width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
+            border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); text-decoration: none; font-size: 1.2rem;
+        }
+        .social-icon:hover { background: var(--primary); color: white; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { height: 60vh; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">M. ISMAIL</a>
+            <div class="nav-links">
+                <a href="#skills">Skills</a>
+                <a href="#freelance">Freelance</a>
+                <a href="#projects">Projects</a>
+                <a href="#certificates">Certificates</a>
+                <button class="theme-toggle" id="theme-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>M. Ismail</h1>
+            <p>Computer Science Student | Mobile Video Editing Specialist | AI Enthusiast</p>
+            <div class="social-links" style="justify-content: center;">
+                <a href="https://github.com/ISMAIL-OFFICIAL" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/-muhammad-ismail-/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.fiverr.com/xkingeditsx" target="_blank" class="social-icon"><i class="fas fa-briefcase"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Technical Proficiency</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Development</span>
+                <h3>Programming Languages</h3>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li><i class="fas fa-check" style="color:var(--primary); margin-right: 8px;"></i> Python (Advanced Logic)</li>
+                    <li><i class="fas fa-check" style="color:var(--primary); margin-right: 8px;"></i> Java (Core Development)</li>
+                    <li><i class="fas fa-check" style="color:var(--primary); margin-right: 8px;"></i> C++ (Algorithmic Solving)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="tag">Creative</span>
+                <h3>Mobile Video Editing</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">High-end post-production using a specialized mobile workflow.</p>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span class="tag" style="background: var(--bg-body);">CapCut App</span>
+                    <span class="tag" style="background: var(--bg-body);">Wink App</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freelance Section -->
+    <section id="freelance" class="container" style="background: var(--bg-card); border-radius: 30px;">
+        <h2 class="section-title">Freelance Experience</h2>
+        <div class="card" style="border: none; box-shadow: none;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h3>Video Editor & Content Creator</h3>
+                    <p style="color: var(--primary); font-weight: 700;">Fiverr (2+ Years)</p>
+                </div>
+                <a href="https://www.fiverr.com/xkingeditsx" target="_blank" class="tag" style="text-decoration: none; background: var(--primary); color: white;">Visit Profile</a>
+            </div>
+            <p style="margin-top: 1.5rem;">I specialize in professional-grade video editing using a mobile-centric approach via <strong>CapCut and Wink</strong>. Over the last two years, I have successfully delivered dynamic anime edits and short-form social media content, consistently achieving high production value within a streamlined mobile environment.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="card" style="background: linear-gradient(135deg, var(--bg-card), var(--bg-body));">
+            <i class="fas fa-project-diagram fa-2x" style="color: var(--primary); margin-bottom: 1.5rem;"></i>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                I have successfully executed a diverse range of technical projects utilizing <strong>C++, Java, and Python</strong>. 
+                Currently, I am specializing in an <strong>Agentic AI</strong> course, where I am developing sophisticated AI-driven 
+                applications. This includes a smart <strong>AI Snake Game</strong> and various other advanced computational 
+                projects that leverage autonomous agents and intelligent logic.
+            </p>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="container">
+        <h2 class="section-title">Courses & Verified Certificates</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-certificate" style="color: #f59e0b; margin-bottom: 1rem;"></i>
+                <h3>Cisco Python Essentials</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Verified certification covering Python fundamentals, modular programming, and Object-Oriented concepts.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-award" style="color: #3b82f6; margin-bottom: 1rem;"></i>
+                <h3>Coursera Professional Suite</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Professional proficiency in document automation and data management:</p>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span class="tag">MS Word</span>
+                    <span class="tag">MS Excel</span>
+                    <span class="tag">PowerPoint</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container" style="text-align: center;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="color: var(--text-muted);">Based in Rahim Yar Khan, Pakistan</p>
+        <a href="mailto:faraz4769@gmail.com" style="color: var(--primary); font-weight: 800; font-size: 1.5rem; text-decoration: none; display: block; margin: 1rem 0;">faraz4769@gmail.com</a>
+        <p style="font-size: 0.8rem; margin-top: 4rem; opacity: 0.5;">&copy; 2023 M. Ismail. All rights reserved.</p>
+    </section>
+
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        const body = document.body;
+        const icon = themeBtn.querySelector('i');
+
+        themeBtn.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.className = 'fas fa-moon';
+            }
+        });
+    </script>
+</body>
+</html>
